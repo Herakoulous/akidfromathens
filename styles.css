@@ -141,10 +141,12 @@ header {
   background-color: rgba(0, 0, 0, 0.4); /* Optional: make text readable */
   border-radius: 10px;
 }
-
-
-
-
+@media (max-width: 768px) {
+  
+.video-section video {
+  height: 50vh;
+}
+}
 /* PARALLAX SECTION */
 .parallax-container {
   position: relative;
