@@ -1,0 +1,493 @@
+html, body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari and Opera */
+}
+
+/* HEADER */
+@import url('https://fonts.googleapis.com/css2?family=Georgia&family=Lato:wght@300;700&display=swap');
+
+header {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  background-color: white;
+  transition: opacity 0.3s ease;
+}
+
+.header-container {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 1000px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3%;
+  box-sizing: border-box;
+  transform: translateX(-15%); /* Slightly to the left */
+}
+
+.logo {
+  max-width: 17vw;
+  max-height: 11vw;
+  height: auto;
+  margin-left: 8%; /* Move logo slightly to the right */
+}
+
+.text-container {
+  text-align: center;
+  flex-grow: 1;
+  min-width: 200px;
+}
+
+.title {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 4vw;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: 'Georgia', serif;
+  font-size: 1.5vw;
+  margin-top: 0;
+  margin-bottom: 1.2vw;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 14vw;
+  flex-direction: row;
+  flex-wrap: wrap; /* Don't wrap on small screens */
+}
+
+.nav-links a {
+  font-family: 'Georgia', serif;
+  font-size: 2vw;
+  text-decoration: none;
+  color: black;
+}
+
+/* Responsive tweaks, but nav stays in row */
+@media (max-width: 768px) {
+  .header-container {
+    transform: translateX(-15%);
+  }
+
+  .logo {
+    max-width: 25vw;
+    max-height: 20vw;
+    margin-left: 2%;
+  }
+
+  .title {
+    font-size: 5vw;
+  }
+
+  .subtitle {
+    font-size: 3vw;
+  }
+
+  .nav-links {
+    gap: 5vw;
+    flex-wrap: nowrap; /* Prevent nav wrapping */
+    overflow-x: auto;   /* Allow horizontal scroll if needed */
+  }
+
+  .nav-links a {
+    font-size: 4vw; /* Much better for small screens */
+    white-space: nowrap;
+  }
+}
+@media (max-width: 400px) {
+  .nav-links a {
+    font-size: min(3.5vw, 0.9rem); /* Keep it readable */
+  }
+}
+/* END HEADER */
+
+/* VIDE0 */
+.video-section {
+  margin-top: 100px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.video-section video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-overlay {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 1;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4); /* Optional: make text readable */
+  border-radius: 10px;
+}
+@media (max-width: 400px) {
+ .video-section {
+  margin-top: 80px;
+}
+}
+
+
+
+/* PARALLAX SECTION */
+.parallax-container {
+  position: relative;
+  background-color: #111;
+}
+
+.parallax-image {
+  height: 85vh;
+  width: 110vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.image-one {
+background-image: url('images/bike.jpg');
+}
+
+.image-two {
+  background-image: url('images/helmet.jpg');
+}
+
+.image-three{
+  background-size: 100vw;
+  height: 40vw;
+  background-image: url('images/train\ station.png');
+}
+
+@media (max-width: 768px) {
+  .parallax-image {
+    background-attachment: scroll;
+    background-position: center top;
+    background-size: contain;
+    height: 50vw;
+  }
+
+  .image-one {
+    height: 60vw;
+  }
+
+  .image-two {
+    height: 79vw;
+  }
+
+  .image-three {
+    background-size: contain; /* Override large vw from desktop */
+    height: 40vw;
+  }
+}
+@media (max-width: 768px) {
+  .image-three {
+    background-size: cover;
+    background-position: center;
+    height: 40vw; /* or 50vw if too small */
+  }
+}
+
+/* END PARALLAX SECTION */
+
+/* STRIPES */
+.stripe {
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: black;
+  width: 100%;
+  padding:0;
+}
+
+.project_container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Headline */
+.stripe h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 100;
+  font-size: 4rem;
+  margin: 0;
+}
+
+/* Paragraphs */
+.stripe p {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  position: relative;
+  bottom: 20px;
+  margin-bottom: 0;
+}
+
+#proj {
+  text-decoration: none;
+  position: relative;
+  bottom: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* ✅ Responsive adjustments for tablets and phones */
+@media (max-width: 768px) {
+  .stripe h2 {
+    font-size: 2.5rem;
+  }
+
+  .stripe p,
+  #proj {
+    font-size: 1.2rem;
+    bottom: 9px;
+  }
+
+  .stripe {
+    padding:0;
+  }
+}
+
+@media (max-width: 480px) {
+  .stripe h2 {
+    font-size: 2rem;
+  }
+
+  .stripe p,
+  #proj {
+    font-size: 1rem;
+    bottom: 8px;
+  }
+
+  .stripe {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* END STRIPES */
+
+/* FOOTER */
+:root {
+  --footer-height: 80px;            /* Overall footer height */
+  --left-contact-offset: -60px;       /* Move .contact-left up/down */
+  --right-contact-offset: -20px;      /* Move .contact-right up/down */
+}
+
+.contact-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #fff;
+  color: black;
+  text-align: center;
+  gap: 60px;
+  height: var(--footer-height);
+  padding: 0px;
+}
+
+.contact-left,
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-left {
+  transform: translateY(var(--left-contact-offset));
+}
+
+.contact-left h2 {
+  font-size: 4rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+.contact-right {
+  transform: translateY(var(--right-contact-offset));
+}
+
+.contact-right p {
+  font-size: 1.3rem;
+  margin: 4px 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 0;
+}
+
+.social-icons a img {
+  width: 28px;
+  height: 28px;
+  background-color: black;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+/* Stack vertically on tablets and phones */
+@media (max-width: 768px) {
+  :root {
+    --footer-height-mobile: auto;
+    --left-contact-height-mobile: 0;
+    --right-contact-height-mobile: 0;
+    --vertical-gap-mobile: 6px;
+  }
+
+  /* Reset body and html margin/padding if you want the footer flush to top of viewport or container */
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
+  .contact-left h2 {
+  margin-top: 0;
+  line-height: 0.5;
+}
+
+  .contact-footer {
+    flex-direction: column;
+    height: var(--footer-height-mobile);
+    gap: var(--vertical-gap-mobile);
+    justify-content: flex-start;  /* Align items at the top to remove empty space */
+
+    margin-top: 0;                /* Make sure no margin on top */
+  }
+
+  .contact-left,
+  .contact-right {
+    transform: translateY(0);
+    margin: 0;
+  }
+
+  .contact-left h2 {
+    font-size: 3rem;
+  }
+
+  .contact-right p {
+    font-size: 1.1rem;
+  }
+}
+
+
+/*END FOOTER */
+
+
+/* ABOUT */
+
+.about-us {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  flex-wrap: wrap; /* Allow wrapping */
+}
+
+.about-text {
+  max-width: 500px;
+  margin: 20px;
+  flex-direction: column;
+  position: relative;
+  bottom: 50px;
+}
+
+.about-text h1 {
+  font-size: 6rem;
+  font-family: Georgia, serif;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  margin: 7px 0;
+  font-weight: 100;
+}
+
+.about-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-images img {
+  width: 300px;
+  max-width: 90vw; /* Prevent overflow on small screens */
+}
+
+
+@media (max-width: 850px) {
+    .about-us {
+    flex-direction: column;
+    align-items: center;  /* center content horizontally */
+    padding-left: 0;      /* remove any left padding if exists */
+    padding-right: 0;     /* remove right padding */
+  }
+  .about-text h1 {
+    font-size: 12vw;
+  }
+
+  .about-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-text p {
+  font-size: 3vw;
+}
+
+  .about-images {
+    margin-left: auto;
+    margin-right: auto;
+  }
+    .about-images img {
+      position:relative;
+      bottom: 50px;
+      margin-bottom: -50px;
+      max-width: 50vw; /* Prevent overflow on small screens */
+  }
+  .about-us {
+    padding-left: 10px;  /* small padding to prevent edge overflow */
+    padding-right: 10px;
+  }
+}
+
+/* END ABOUT */
+a {
+  text-decoration: none;
+  color: inherit;
+}

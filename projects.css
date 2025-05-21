@@ -1,0 +1,326 @@
+    /* HEADER */
+@import url('https://fonts.googleapis.com/css2?family=Georgia&family=Lato:wght@300;700&display=swap');
+body::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari and Opera */
+}
+
+header {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  background-color: white;
+  transition: opacity 0.3s ease;
+}
+
+.header-container {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 1000px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3%;
+  box-sizing: border-box;
+  transform: translateX(-15%); /* Slightly to the left */
+}
+
+.logo {
+  max-width: 17vw;
+  max-height: 11vw;
+  height: auto;
+  margin-left: 8%; /* Move logo slightly to the right */
+}
+
+.text-container {
+  text-align: center;
+  flex-grow: 1;
+  min-width: 200px;
+}
+
+.title {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 4vw;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: 'Georgia', serif;
+  font-size: 1.5vw;
+  margin-top: 0;
+  margin-bottom: 1.2vw;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 14vw;
+  flex-direction: row;
+  flex-wrap: wrap; /* Don't wrap on small screens */
+}
+
+.nav-links a {
+  font-family: 'Georgia', serif;
+  font-size: 2vw;
+  text-decoration: none;
+  color: black;
+}
+
+/* Responsive tweaks, but nav stays in row */
+@media (max-width: 768px) {
+  .header-container {
+    transform: translateX(-15%);
+  }
+
+  .logo {
+    max-width: 25vw;
+    max-height: 20vw;
+    margin-left: 2%;
+  }
+
+  .title {
+    font-size: 5vw;
+  }
+
+  .subtitle {
+    font-size: 3vw;
+  }
+
+  .nav-links {
+    gap: 5vw;
+    flex-wrap: nowrap; /* Prevent nav wrapping */
+    overflow-x: auto;   /* Allow horizontal scroll if needed */
+  }
+
+  .nav-links a {
+    font-size: 4vw; /* Much better for small screens */
+    white-space: nowrap;
+  }
+}
+@media (max-width: 400px) {
+  .nav-links a {
+    font-size: min(3.5vw, 0.9rem); /* Keep it readable */
+  }
+}
+/* END HEADER */
+/* Big image  */
+/* For small screens */
+
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Base image styles */
+#full {
+  margin-top: 100px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 400px) {
+  #full {
+    margin-top: 80px;
+  }
+}
+/* SWIPER */
+    .swiper {
+      padding: 0;
+      background: black;
+      width: 100%;
+      margin: 0;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 40vw;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: black;
+    }
+
+    .swiper-pagination-bullet {
+      background: black;
+      opacity: 0.6;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: black;
+      opacity: 1;
+    }
+
+
+/* FOOTER */
+:root {
+  --footer-height: 80px;            /* Overall footer height */
+  --left-contact-offset: -60px;       /* Move .contact-left up/down */
+  --right-contact-offset: -20px;      /* Move .contact-right up/down */
+}
+
+.contact-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #fff;
+  color: black;
+  text-align: center;
+  gap: 60px;
+  height: var(--footer-height);
+  margin-bottom: 10px;
+}
+
+.contact-left,
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-left {
+  transform: translateY(var(--left-contact-offset));
+}
+
+.contact-left h2 {
+  font-size: 4rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+.contact-right {
+  transform: translateY(var(--right-contact-offset));
+}
+
+.contact-right p {
+  font-size: 1.3rem;
+  margin: 4px 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 0px;
+}
+
+.social-icons a img {
+  width: 28px;
+  height: 28px;
+  background-color: black;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+/* Stack vertically on tablets and phones */
+@media (max-width: 768px) {
+  :root {
+    --footer-height-mobile: auto;
+    --left-contact-height-mobile: 0;
+    --right-contact-height-mobile: 0;
+    --vertical-gap-mobile: 6px;
+  }
+
+  /* Reset body and html margin/padding if you want the footer flush to top of viewport or container */
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
+  .contact-left h2 {
+  margin-top: 0;
+  line-height: 0.5;
+}
+
+  .contact-footer {
+    flex-direction: column;
+    height: var(--footer-height-mobile);
+    gap: var(--vertical-gap-mobile);
+    justify-content: flex-start;  /* Align items at the top to remove empty space */
+
+    margin-top: 0;                /* Make sure no margin on top */
+  }
+
+  .contact-left,
+  .contact-right {
+    transform: translateY(0);
+    margin: 0;
+  }
+
+  .contact-left h2 {
+    font-size: 3rem;
+  }
+
+  .contact-right p {
+    font-size: 1.1rem;
+  }
+}
+/* next-prev project  */
+.project-nav {
+  font-family: Georgia, serif;
+  font-weight: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 0;
+  background-color: black; /* light gray or your preferred color */
+  width: 100%;
+  box-sizing: border-box;
+  font-size:2rem;
+}
+
+.project-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.project-nav a:hover {
+  color: #007BFF; /* blue on hover */
+}
+@media (max-width: 768px) {
+  .project-nav {
+    font-size: 0.8rem;
+  }
+}
+/* STRIPES */
+.stripe {
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: black;
+  width: 100%;
+  padding:0;
+}
+
+#proj {
+  text-align: center;
+  font-size: 2rem;
+}
+@media (max-width: 768px) {
+  .stripe {
+    height: 2rem;
+  }
+  #proj {
+  font-size: 1rem;
+  }
+}
